@@ -11,6 +11,7 @@
  */
 void shift_elements(int *arr, int i)
 {
+    int start = i;
     int prev = *arr, temp = *arr;
     int j = i + 1;
     while ((arr + j) != NULL && i < MAX_SIZE + 1)
@@ -21,7 +22,7 @@ void shift_elements(int *arr, int i)
         i++;
         j++;
     }
-    *(arr + 0) = 0; 
+    *(arr + start) = 0; 
 }
 
 /**
@@ -33,7 +34,7 @@ void shift_elements(int *arr, int i)
 void insertion_sort(int *arr, int len)
 {
     int i, j, key;
-    for (i = 0; i < len; i++)
+    for (i = 1; i < len; i++)
     {
         key = *(arr + i);
         j = i - 1;

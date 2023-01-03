@@ -60,7 +60,7 @@ int word_match(char *string, char *to_match)
     {
         if ((char)*(to_match + match) == (char)*(string + i))
         {
-            match++;
+            match++; 
         }
         i++;
     }
@@ -77,7 +77,7 @@ void search(char *s, char *q)
     {
         word_buf = (char *)realloc(word_buf, WORD);
         skip = 0;
-        while (isspace(*(s + skip + current_pos)))
+        while (isspace(*(s + skip + current_pos))) 
             skip++;
         current_pos += skip;
         current_pos += getWord((s + current_pos), word_buf);

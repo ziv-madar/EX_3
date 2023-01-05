@@ -21,5 +21,5 @@ txtfind.out: txtfind.c txtfind.h
 	gcc -g -c -Wall -pedantic txtfind.c -o txtfind.out
 
 clean:
-	rm -f isort.out txtfind.out txtfind isort
+	rm -f isort.out txtfind.out 
 ##rm -f $(OBJECTS1) isort $(OBJECTS2) txtfind

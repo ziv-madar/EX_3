@@ -1,6 +1,8 @@
 OBJECTS1 = isort.out
 OBJECTS2 = txtfind.out
 
+all: isort txtfind clean
+
 test: $(OBJECTS1) $(OBJECTS2)
 	gcc -g -ANSI -Wall -pedantic $(OBJECTS1) -o isort
 	gcc -g -ANSI -Wall -pedantic $(OBJECTS2) -o txtfind

@@ -19,5 +19,5 @@ int word_match(char *s, char *q);
 /* search all mutations of q inside s*/
 void search(char *s, char *q);
 /* search all lines in s where q appears */
-void searchLines(char *s, char *q)
+void searchLines(char *s, char *q);
 #endif

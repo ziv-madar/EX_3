@@ -71,11 +71,11 @@ void search(char *s, char *q)
 {
 
     int current_pos = 0, query_len = strlen(q), string_len = strlen(s) - query_len;
-    char *word_buf = malloc(WORD);
+    char *word_buf = malloc(WORD * sizeof(char));
     int skip = 0, match;
     while (current_pos <= string_len)
     {
-        word_buf = (char *)realloc(word_buf, WORD);
+        word_buf = (char *)realloc(word_buf, WORD * sizeof(char));
         skip = 0;
         while (isspace(*(s + skip + current_pos))) 
             skip++;
@@ -122,13 +122,14 @@ int getOperands(char *cmd, char *query)
     }
     queryLen = getWord(buf, query) + 1; /* query length + whitespace */
     getWord(buf + queryLen, cmd);
+    free(buf);
     return trueSize;
 }
 
 int main()
 {
-    char *cmd = (char *)malloc(1), *query = (char *)malloc(WORD);
-    char *buf = (char *)malloc(MAX_LINES * LINE);
+    char *cmd = (char *)malloc(255), *query = (char *)malloc(WORD  * sizeof(char));
+    char *buf = (char *)malloc(MAX_LINES * LINE * sizeof(char));
     getOperands(cmd, query);
     getParagraph(buf);
 

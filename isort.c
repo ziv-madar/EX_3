@@ -54,7 +54,7 @@ void insertion_sort(int *arr, int len)
  */
 int *getArray()
 {
-    int *arr = malloc(MAX_SIZE + 1);
+    int *arr = malloc((MAX_SIZE + 1) * sizeof(int));
     int i = 0;
     while (scanf("%d", (arr + i)) == 1 && i < MAX_SIZE + 1)
         i++;
@@ -82,9 +82,10 @@ void print_arr(int *arr)
 int main(void)
 {
     int *arr;
-    printf("Please enter %d integers separated with spaces: \n", MAX_SIZE);
+    /*printf("Please enter %d integers separated with spaces: \n", MAX_SIZE);*/
     arr = getArray();
     insertion_sort(arr, MAX_SIZE);
     print_arr(arr);
+    free(arr);
     return 0;
 }
